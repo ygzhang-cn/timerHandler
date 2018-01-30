@@ -80,4 +80,3 @@ $.timerHandler('bindDomIDRemove').time('10s').limit(1).call(function(count){   
 }).start();
 ```
 
-
