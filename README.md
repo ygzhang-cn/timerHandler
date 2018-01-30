@@ -1,6 +1,7 @@
 # jQuery timerHandler
 jQuery timerHandler 定时器插件支持动态注册管理，支持已ms/s/m/h时间设置间隔周期时间、暂停、限制运行次数及自动销毁机制
-插件主页：https://github.com/ygzhang-cn/timerHandler/
+插件主页：[https://github.com/ygzhang-cn/timerHandler/](https://github.com/ygzhang-cn/timerHandler/)
+
 
 2014.7.12 插件入库
 
@@ -12,10 +13,15 @@ jQuery timerHandler 定时器插件支持动态注册管理，支持已ms/s/m/h�
 
 ## 使用方法
 1、引入插件，传统方式页面引入
-使用 $.timerHandler 管理注册定时器
+
+示例：[使用 $.timerHandler 管理注册定时器](https://ygzhang-cn.github.io/timerHandler/demo/demo1.html)
+
 
 2、AMD/CMD/Node方式加载
-使用 define Name/ exports module Name 管理注册定时器, 默认为 timerHandler 
+
+使用 define Name/ exports module Name 管理注册定时器, 默认为 timerHandler
+
+示例：[使用 $.timerHandler 管理注册定时器](https://ygzhang-cn.github.io/timerHandler/demo/demo2.html)
 
 3、接口方法
 注：定时器对象缓存数据注册在jQuery($)对象上 $.timerHandler
