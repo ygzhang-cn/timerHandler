@@ -59,7 +59,7 @@ $.timerHandler('mytimer2').time('500ms').limit(10).call(function(count){
 }).start();
 
 //注册一个名为'mytimer3'的定时器，每1秒运行一次，并将其绑定在DOM ID为 bindDomID 的节点上，当此Dom节点移除后自动销毁
-$('body').append('<div id="bindDomID">注册一个名为'mytimer3'的定时器，每1秒运行一次，并将其绑定在DOM ID为 bindDomID 的节点上，当此Dom节点移除后自动销毁</div>')
+$('body').append('<div id="bindDomID">注册了一个名为mytimer3的定时器，每1秒运行一次，并将其绑定在DOM ID为 bindDomID 的节点上，当此Dom节点移除后自动销毁（此节点10秒后自动移除）</div>')
 $.timerHandler('mytimer3').time('1s').bindDom('#bindDomID').call(function(count){            
     //this => timerHandler Obj
     console.log('mytimer3 runing : '+count);
