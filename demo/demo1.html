@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery timerHandler</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../jquery.timerHandler.js"></script>
+    <style type="text/css">
+        body{
+            font-size: 16px;
+            padding: 50px;
+            color: #666
+        }
+        b{color: #000}
+        #bindDomID{
+            padding: 10px;
+            background-color: #666;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>jQuery timerHandler，打开console查看运行日志</h3>
+    <p>示例：传统方式页面引入插件,使用 <b>$.timerHandler</b> 对象管理注册定时器</p>
+    <script type="text/javascript">
+    //注册一个名为'mytimer1'的定时器，每5秒运行一次
+    var myTimer = $.timerHandler('mytimer1').time('5s').call(function(count) {
+        //this => timerHandler Obj
+        console.log('mytimer1 runing : ' + count);
+    }).start();
+    //myTimer.pause();//暂停定时器运行
+    //myTimer.start();//定时器重新启动
+    //myTimer.call(callback);//重新注册定时器回调主函数
+    //myTimer.stop();//停止(销毁)定时器
+
+    //注册一个名为'mytimer2'的定时器，每500毫秒运行一次，运行10次后销毁
+    $.timerHandler('mytimer2').time('500ms').limit(10).call(function(count) {
+        //this => timerHandler Obj
+        console.log('mytimer2 runing : ' + count);
+    }).callStopEnd(function() {
+        console.log('mytimer2 stop');
+    }).start();
+
+    //注册一个名为'mytimer3'的定时器，每1秒运行一次，并将其绑定在DOM ID为 bindDomID 的节点上，当此Dom节点移除后自动销毁
+    $('body').append('<div id="bindDomID">注册了一个名为mytimer3的定时器，每1秒运行一次，并将其绑定在DOM ID为 bindDomID 的节点上，当此Dom节点移除后自动销毁（此节点10秒后自动移除）</div>')
+    $.timerHandler('mytimer3').time('1s').bindDom('#bindDomID').call(function(count) {
+        //this => timerHandler Obj
+        console.log('mytimer3 runing : ' + count);
+    }).callStopEnd(function() {
+        console.log('mytimer3 stop');
+    }).start();
+    //10秒后移除DOM ID为 bindDomID 的节点
+    $.timerHandler('bindDomIDRemove').time('10s').limit(1).call(function(count) {
+        //this => timerHandler Obj
+        console.log('dom#bindDomID is remove');
+        $('#bindDomID').remove();
+    }).start();
+    </script>
+</body>
+
+</html>
