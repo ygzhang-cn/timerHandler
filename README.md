@@ -1,5 +1,10 @@
 # jQuery/Zepto timerHandler
 jQuery/Zepto timerHandler 定时器插件支持动态注册管理，支持已ms/s/m/h时间设置间隔周期时间、暂停、限制运行次数及自动销毁机制
+
+timerHandler 支持 IE7+、Firefox、Safari、Chrome和Opera
+
+timerHandler bindDom 需要IE9/IE9+、Firefox、Safari、Chrome和Opera支持DOM2级事件处理的浏览器
+
 插件主页：[https://github.com/ygzhang-cn/timerHandler/](https://github.com/ygzhang-cn/timerHandler/)
 
 
@@ -10,7 +15,6 @@ jQuery/Zepto timerHandler 定时器插件支持动态注册管理，支持已ms/
 2014.7.28 改善插件支持Node环境使用
 
 2018.1.30 最近遇到个全站Ajax加载维护的项目，更新了下公司库里的timerHandler，增加支持基于Dom节点移除的自动销毁已绑定定时器的事件机制
-
 ## 使用方法
 1、引入插件，传统方式页面引入
 
