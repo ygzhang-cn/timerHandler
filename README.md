@@ -1,5 +1,6 @@
 # jQuery timerHandler
 jQuery timerHandler 定时器插件支持动态注册管理，支持已ms/s/m/h时间设置间隔周期时间、暂停、限制运行次数及自动销毁机制
+插件主页：https://github.com/ygzhang-cn/timerHandler/
 
 2014.7.12 插件入库
 
