@@ -1,7 +1,7 @@
 /*!
  * ---------------------------
- * jQuery Library  timerHandler
- * jQuery 定时器插件
+ * zepto Library  timerHandler
+ * zepto 定时器插件
  * @version 1.0.2 01/30/2018
  * @author ygzhang.cn@msn.com
  * @link https://github.com/ygzhang-cn/timerHandler
@@ -12,13 +12,13 @@
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD
-        define(['jquery'], factory);
+        define(['zepto'], factory);
     } else if (typeof exports === 'object') {
         // Node, CommonJS-like
-        module.exports = factory(require('jquery'));
+        module.exports = factory(require('zepto'));
     } else {
         // Browser globals (root is window)
-        root.timerHandler = factory(root.jQuery);
+        root.timerHandler = factory(root.Zepto);
     }
 }(this, function($) {
     "use strict";
@@ -79,7 +79,7 @@
             } else if (WIN) {
                 this._bindDom = selector;
                 var _this = this;
-                $(BODY).on('DOMNodeRemoved DOMNodeRemovedFromDocument', selector, function() {
+                $(BODY).on('DOMNodeRemoved', selector, function() {
                     _this.stop();
                 });
             }
@@ -167,7 +167,7 @@
             if (timerHandler.data[this._name]) {
                 this._callbackStop && this._callbackStop();
                 window.clearInterval(this._timer);
-                if (this._bindDom && WIN) $(BODY).off('DOMNodeRemoved DOMNodeRemovedFromDocument', this._bindDom);
+                if (this._bindDom && WIN) $(BODY).off('DOMNodeRemoved', this._bindDom);
                 delete timerHandler.data[this._name];
                 this._callbackStopEnd && this._callbackStopEnd();
                 return true;
