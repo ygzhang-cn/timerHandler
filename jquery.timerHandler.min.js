@@ -5,6 +5,7 @@
  * @version 1.0.2 01/30/2018
  * @author ygzhang.cn@msn.com
  * @link 24vote.cn
+ * @link https://github.com/ygzhang-cn/timerHandler/
  * @copyright 2015-2018 Kunming Dongring Technology Co., Ltd.
  * ---------------------------
  **/
